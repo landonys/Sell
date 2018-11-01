@@ -1,0 +1,16 @@
+E:\mysrc\MySell\ConsoleTest\bin\Debug\ConsoleTest.exe.config
+E:\mysrc\MySell\ConsoleTest\bin\Debug\ConsoleTest.exe
+E:\mysrc\MySell\ConsoleTest\bin\Debug\ConsoleTest.pdb
+E:\mysrc\MySell\ConsoleTest\bin\Debug\MySell.Dal.dll
+E:\mysrc\MySell\ConsoleTest\bin\Debug\MySell.Service.dll
+E:\mysrc\MySell\ConsoleTest\bin\Debug\MySql.Data.dll
+E:\mysrc\MySell\ConsoleTest\bin\Debug\Dapper.dll
+E:\mysrc\MySell\ConsoleTest\bin\Debug\MySell.Dal.pdb
+E:\mysrc\MySell\ConsoleTest\bin\Debug\MySell.Dal.dll.config
+E:\mysrc\MySell\ConsoleTest\bin\Debug\MySell.Service.pdb
+E:\mysrc\MySell\ConsoleTest\bin\Debug\Dapper.xml
+E:\mysrc\MySell\ConsoleTest\obj\Debug\ConsoleTest.csprojAssemblyReference.cache
+E:\mysrc\MySell\ConsoleTest\obj\Debug\ConsoleTest.csproj.CoreCompileInputs.cache
+E:\mysrc\MySell\ConsoleTest\obj\Debug\ConsoleTest.csproj.CopyComplete
+E:\mysrc\MySell\ConsoleTest\obj\Debug\ConsoleTest.exe
+E:\mysrc\MySell\ConsoleTest\obj\Debug\ConsoleTest.pdb

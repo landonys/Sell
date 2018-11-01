@@ -1,0 +1,128 @@
+﻿@using MySell.App.Models;
+@model List<MainProductModel>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="320" name="MobileOptimized">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content="瑞士名表官方旗舰店">
+    <meta name="description" content="瑞士名表官方旗舰店">
+    <meta name="author" content="###">
+    <link href="http://localhost:10168/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="http://localhost:10168/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <title>瑞士名表官方旗舰店</title>
+    <link href="~/Content/Index/not3style.css" rel="stylesheet" />
+    <link href="~/Content/Index/style.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #856D35;
+        }
+
+        #page {
+            max-width: 750px;
+            background: #ffffff;
+        }
+
+        footer {
+            font-size: 18px;
+        }
+
+        header {
+            background: #000000;
+            font-size: 18px;
+        }
+
+        .not3tuijian li .order {
+            background: #000000;
+        }
+    </style>
+</head>
+<body style="height:auto;">
+    <header>
+        瑞士名表官方旗舰店
+    </header>
+    <div id="page">
+        <!--成都黑眼圈网络科技有限公司banner开始-->
+        <div class="mBan2" style="height: auto;">
+            <div id="slideBox" class="slideBox" style="height: auto;">
+                <div class="hd">
+                    <ul>
+                        <li class="">。</li>
+                        <li class="">。</li>
+                        <li class="on">。</li>
+                    </ul>
+                </div>
+                <div class="bd" style="height: auto;">
+                    <ul style="position: relative;">
+                        <li style="position: absolute; left: 0px; top: 0px; display: none;"><a href="http://xf.zkyd66.com/mall/OmegaQ.htm?gzid=" target="_blank"><img src="~/Image/201872222626278.png" style=" height: 100%;"></a></li>
+                        <li style="position: absolute; left: 0px; top: 0px; display: none;"><a href="http://xf.zkyd66.com/mall/nginesp.htm?gzid=" target="_blank"><img src="~/Image/201872222637731.png" style=" height: 100%;"></a></li>
+                        <li style="position: absolute;  left: 0px; top: 0px; display: list-item;"><a href="http://xf.zkyd66.com/mall/Rolexo.htm?gzid=" target="_blank"><img src="~/Image/201872222645832.png" style=" height: 100%;"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--成都黑眼圈网络科技有限公司banner结束-->
+        <article class="showcontent">
+            <p>
+                <img src="~/Image/222540EE93091D.png"><br>
+            </p>
+        </article>
+        <article class="not3tuijian">
+            <ul>
+                @foreach (var pic in Model)
+                {
+                    <li>
+                        <a href="/Mall/Index/@pic.Id" target="_blank"><img src="@pic.PicSrc"></a>
+                        <span>
+                            <strong>￥@pic.DPrice 元</strong>原价：<s>@pic.Price</s>
+                            @Html.ActionLink("立即购买", "Index", "Mall", new { Id = pic.Id }, new { @class = "order", target = "_blank" })
+                        </span>
+                    </li>
+                }
+            </ul>
+        </article>
+
+        <article class="showcontent">
+            <p><img src="~/Image/10563145EAE9EC.gif"></p><p><img src="~/Image/105641DB1C88CA.jpg"></p><p><img src="~/Image/10565771F8E8A2.jpg"></p><p><img src="~/Image/1056579872C862.png"></p><p><br></p>
+        </article>
+        <footer>
+            <p>
+                <a href="#" target="_blank" title="站长统计">站长统计</a>
+            </p>
+            <a href="/Home/Index" target="_blank">网站首页</a><a href="#" target="_blank">联系我们</a>
+            <a href="#" target="_blank">关于我们</a><br>
+
+            @*<a href="http://hei.dingshi.cc/" target="_blank">网站首页</a><a href="http://hei.dingshi.cc/html/contact.htm" target="_blank">联系我们</a>
+                <a href="http://hei.dingshi.cc/html/about.htm" target="_blank">关于我们</a><br>*@
+            版权所有 违者必究 2010-2018
+        </footer>
+    </div>
+</body>
+</html>
+<script src="~/Scripts/Index/jquery-1.11.0.min.js"></script>
+<script src="~/Scripts/Index/jquery.SuperSlide.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    $(function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?165aacd1a579c2da1219c27ca7e91904";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+
+        $(".slideBox").slide({
+            mainCell: ".bd ul",
+            effect: "fold",
+            autoPlay: true,
+            trigger: "click"
+        });
+    });
+</script>

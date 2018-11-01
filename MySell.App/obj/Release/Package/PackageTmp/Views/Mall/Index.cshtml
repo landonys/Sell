@@ -1,0 +1,580 @@
+﻿@using MySell.App.Models;
+@using MySell.Dal.Model;
+@model MallProductModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://hei.dingshi.cc/mall/Rolex12.htm -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="320" name="MobileOptimized">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="keywords" content="@Model.Title">
+    <meta name="description" content="@Model.Title">
+    <meta name="author" content="###">
+    <title>@Model.Title</title>
+    @*<link href="http://hei.dingshi.cc/favicon.ico" type="image/x-icon" rel="icon">
+        <link href="http://hei.dingshi.cc/favicon.ico" type="image/x-icon" rel="shortcut icon">*@
+    <link href="http://localhost:10168/favicon.ico" type="image/x-icon" rel="icon">
+    <link href="http://localhost:10168/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link href="~/Content/Mall/not3mall.css" rel="stylesheet" />
+    <link href="~/Content/Mall/layer.css" rel="stylesheet" />
+    <style>
+
+        body {
+            background: #856D35;
+        }
+
+        #page {
+            max-width: 750px;
+        }
+
+        header {
+            background: #000000;
+        }
+    </style>
+</head>
+
+<body style="">
+    <div id="page">
+
+        <!--HeiYanQuan Begin-->
+        <div id="heiyanquan">
+            <header>
+                <h1>@Model.Title</h1>
+            </header>
+            <div class="banner">
+                @foreach (var src in Model.BbannerPic)
+                {
+                    <p><img src="~/Image/@src"></p>
+                }
+                @*<p><img src="~/Image/2210127F6E3E54.jpg"></p><p><img src="~/Image/22101203DE236C.jpg"></p>*@
+                <p><br></p>
+            </div>
+            <div id="not3app10">
+                <input type="hidden" id="hidid" value="@Model.Id" />
+                <input type="hidden" id="activity" value="@Model.Activity" />
+                <section class="buy" id="not3wz001">
+                    <div class="row1">
+                        <strong>￥@Model.DPrice</strong>
+                        <ol>
+                            <li><p>原价</p>@Model.Price</li>
+                            <li><p>折扣</p>@Model.Discount</li>
+                            <li><p>节省</p>@Model.SavePrice</li>
+                        </ol>
+                    </div>
+
+                    <div class="row2">
+                        <strong>@Model.Sold 件已售</strong>
+                        <div class="djs">
+                            <div class="time-count">
+                                <div id="remainTime_1" class="jltimer"><span id="day_show">0</span>天<span id="hour_show">0</span>小时<span id="minute_show">0</span>分<span id="second_show">0</span>秒</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <article class="des"></article>
+
+                    <a class="btn" href="#buy">立即购买</a>
+
+                </section>
+            </div>
+            <article class="showcontent">
+                <h2>购买描述</h2>
+                <div style="padding:10px;">
+                    <p>
+                        <span style="margin: 0px; box-sizing: border-box; font-family: 微软雅黑; font-size: 14px; background-color: rgb(255, 255, 255);">@Model.Describe1</span>
+                        <span style="margin: 0px; box-sizing: border-box; font-family: 微软雅黑; padding: 0px; color: rgb(255, 0, 0); font-size: 14px; font-weight: bold; background-color: rgb(255, 255, 255);">@Model.Price</span>
+                        <span style="margin: 0px; box-sizing: border-box; font-family: 微软雅黑; font-size: 14px; background-color: rgb(255, 255, 255);">@Model.Describe2</span>
+                        <span style="margin: 0px; box-sizing: border-box; font-family: 微软雅黑; padding: 0px; color: rgb(255, 0, 0); font-size: 14px; font-weight: bold; background-color: rgb(255, 255, 255);">@Model.DPrice</span>
+                        <span style="margin: 0px; box-sizing: border-box; font-family: 微软雅黑; font-size: 14px; background-color: rgb(255, 255, 255);">@Model.Describe3 </span>
+                        <br style="margin: 0px; box-sizing: border-box; font-family: 微软雅黑; white-space: normal; padding: 0px; font-size: 14px; background-color: rgb(255, 255, 255);">
+                        <span style="margin: 0px; box-sizing: border-box; font-family: 微软雅黑; padding: 0px; color: rgb(255, 0, 0); font-size: 14px; font-weight: bold; background-color: rgb(255, 255, 255);">
+                            1、由于抢购太过火爆，订单量巨大，第一批即将售空！<br style="margin: 0px; box-sizing: border-box; padding: 0px;">
+                            2、专柜正品，支持专业人士验货！<br style="margin: 0px; box-sizing: border-box; padding: 0px;">
+                            3、瑞士官方开具电子发票及全球联保卡。支持开箱验货，验货满意后再付款！终身售后服务，购买放心有保障！
+                        </span>
+                    </p>
+                    @foreach (var src in Model.DescribePic)
+                    {
+                        <p><img src="~/Image/@src"></p>
+                    }
+                    <p><br></p>
+                </div>
+                <h2>购买流程</h2>
+                @foreach (var src in Model.ProcessPic)
+                {
+                    <p><img src="~/Image/@src"></p>
+                }
+                <h2>产品简介</h2>
+                @foreach (var src in Model.SynopsisPic)
+                {
+                    <p><img src="~/Image/@src"></p>
+                }
+                <p><br></p>
+                <h2>客户服务</h2>
+                <div class="btn">
+                    <a class="btn" href="tel:@Model.Mobile">电话咨询：@Model.Mobile</a><a class="btn" href="sms:@Model.Mobile">电话咨询：@Model.Mobile</a>
+                </div>
+                <h2>推荐产品</h2>
+                <div style="padding:10px;">
+                </div>
+
+            </article>
+            <div id="not3apppingjia">
+
+            </div>
+        </div>
+        <!--HeiYanQuan End-->
+        <article id="buy">
+            <div id="not3qiehuan">
+                <ul id="qh">
+                    <li id="qha" class="on" onclick="not3change('qha', 'tx');">填写订单</li>
+                    <li id="qhb" class="m" onclick="not3change('qhb','cx');">查询订单</li>
+                    <li id="qhc" onclick="not3change('qhc', 'th');">退换登记</li>
+                </ul>
+            </div>
+            <div style="display:none">
+                <iframe id="not3msg" name="not3msg" width="0" height="0" src="~/Image/saved_resource.html"></iframe>
+            </div>
+            <div id="not3order">
+                <div class="warp neworder" id="order">
+                    <div class="bdbox">
+                        <label class="bdxx"><em>*</em>产品</label>
+                        <div class="dxbox red chanpin not3chanpin">
+                            <input type="hidden" id="hidSpecId" value="@Model.FirstProductSpec.Id" />
+                            <label class="now">
+                                <input type="radio" name="ProductSpecs" value="@Model.FirstProductSpec.Name" alt="@Model.Mobile" checked="" onclick="Specjiage(this,@Model.FirstProductSpec.Id,@Model.FirstProductSpec.Price);">@Model.FirstProductSpec.Name
+                            </label>
+
+                            @foreach (var spec in Model.ProductSpec)
+                            {
+                                <label>
+                                    <input type="radio" name="ProductSpecs" value="@spec.Name" alt="@Model.Mobile" onclick="Specjiage(this,@spec.Id,@spec.Price);">@spec.Name
+                                </label>
+                            }
+                        </div>
+                    </div>
+                    <input type="hidden" value="" style="width:600px;" name="not3chanpin" id="not3chanpin">
+
+                    <div id="not3guanlian"></div>
+
+                    <div class="bdbox">
+                        <label class="bdxx"><em>*</em>数量</label>
+                        <a class="jian" href="javascript:;" onclick="minnumber()">-</a>
+                        <input type="text" class="shuliang" size="4" value="1" name="mun" id="Qty" onblur="inputnumber();" readonly="">
+                        <a class="jia" href="javascript:;" onclick="addnumber()">+</a>
+                    </div>
+                    <div class="bdbox">
+                        <label class="bdxx"><em>*</em>姓名</label>
+                        <div class="textbox">
+
+                            <input type="text" name="name" id="UserName" datatype="s2-4" errormsg="姓名至少2个字符,最多4个字符！" nullmsg="请输入你的姓名！">
+
+                        </div>
+                    </div>
+                    <div class="bdbox">
+                        <label class="bdxx"><em>*</em>手机</label>
+                        <div class="textbox">
+
+                            <input type="number" name="mob" id="Mobile" datatype="m" errormsg="请输入正确的手机号码！" nullmsg="请输入您的手机号码！">
+
+                        </div>
+                    </div>
+
+                    <div class="bdbox">
+                        <label class="bdxx"><em>*</em>地区</label>
+                        <div class="xlbox">
+
+                            <div id="not3ssx">
+                                @*<select name="province" class="prov dqxl" datatype="*" nullmsg="请选择地区！"></select><select name="city" class="city dqxl" disabled="disabled" datatype="*" nullmsg="请选择地区！"></select><select name="area" class="dist dqxl" disabled="disabled" datatype="*" nullmsg="请选择地区！"></select>*@
+                                <div id="disSelect" data-toggle="distpicker">
+                                    <select class="prov dqxl" id="Province" v-model="Province"></select>
+                                    <select class="prov dqxl" id="City" v-model="City"></select>
+                                    <select class="prov dqxl" id="Area" v-model="Area"></select>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="bdbox">
+                        <label class="bdxx"><em>*</em>地址</label>
+                        <div class="textbox">
+                            <input type="text" name="address" id="Address" datatype="*" errormsg="请输入正确的收货地址！" nullmsg="请输入正确的收货地址！">
+                        </div>
+                    </div>
+                    <div class="bdbox">
+
+                        <label class="bdxx"><em>*</em>金额</label>
+                        <div class="text3box">
+                            <input name="price" value="@Model.DPrice" id="Amount" readonly="" size="6"> 元 <span id="zfbyh"></span>
+                            <input type="hidden" name="zfbprice" id="hidprice" value="@Model.DPrice">
+                        </div>
+                    </div>
+                    <div class="bdbox">
+                        <label class="bdxx"><em>*</em>付款</label>
+                        <div class="dxbox">
+                            <label for="b1"><input type="radio" checked="checked" name="pay" id="b1" value="cod" onclick="return changeItem(0);"> <img src="~/Content/hdfk.gif"></label>
+
+                        </div>
+                    </div>
+                    <div class="bdbox">
+                        <label class="bdxx">留言</label>
+                        <div class="text2box">
+                            <textarea name="guest" id="LeavMessage" placeholder=""></textarea>
+                        </div>
+                    </div>
+
+                    <input type="hidden" name="fromurl" value="#>
+                    <input type="hidden" name="nowurl" value="#">
+                    <input type="hidden" name="click_id" value="">
+                    <input type="hidden" name="not3time" value="2018-09-26 9:23:10">
+                    <input type="hidden" name="keyword" value="">
+                    <input type="hidden" name="gzid" value="904-NUO">
+                    <input type="hidden" name="not3os" id="not3os">
+                    <div class="subbox">
+                        <input type="button" name="submit" id="butsubmit" value="立即提交订单">
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+                <div id="fahuo">
+                    <ul class="orderms"></ul>
+                </div>
+
+            </div>
+            <div id="not3check" style="display:none">
+                <form name="not3check" action="#" method="post" target="not3msg">
+                    <div class="not3p">手机号码<span>*</span></div>
+                    <input type="hidden" name="yuyan" id="yuyan" value="">
+                    <div class="pad"><input type="text" name="tel" id="SelTel" class="bod2" value="" placeholder="请输入你提交订单的手机号码"></div>
+                    <div id="notcheckresult" style="padding-left:20px;">
+
+                    </div>
+                    <div class="gou" onclick="SelectSubmit();"><a>查询订单</a></div>
+                </form>
+            </div>
+            <div id="not3tui" style="display:none">
+                <div class="not3p">待处理订单号<span>*</span> <small>如果不记得订单号，请在左边查询获取。</small></div>
+                <div class="pad"><input type="text" name="orderid" id="RefOrder" class="bod2" placeholder="请输入待处理的订单号" required=""></div>
+
+                <div class="not3p">手机号码<span>*</span> </div>
+                <div class="pad"><input type="text" name="tel" class="bod2" id="RefMobile" placeholder="提交订单的手机号码" required=""></div>
+
+                <div class="not3p">处理方式<span>*</span></div>
+                <div class="pad">
+                    <select name="lx" id="RefProcessMode" class="bod2" onchange="onProcess();">
+                        <option value="换货" fs="none">换货</option>
+                        <option value="退货" fs="">退货</option>
+                    </select>
+                </div>
+
+                <div id="putbank" style="display:none">
+                    <div class="not3p">退款账户</div>
+                    <div class="pad"><textarea name="bank" style="height:60px" class="bod2" id="RefAccount" rows="3" placeholder="比如：工商银行/账户6222 **** **** **** 809/真实姓名/开户行/湖南长沙xx支行"></textarea></div>
+                </div>
+
+                <div class="not3p">备注信息</div>
+                <div class="pad"><textarea name="liuyan" style="height:60px" class="bod2" rows="3" id="RefMessage" placeholder="请描述清楚申请原因，以便我们尽快为你处理订单" required=""></textarea></div>
+                <div class="gou" onclick="RefSubmit();"><a>申请退换处理</a></div>
+            </div>
+        </article>
+
+        <footer>
+            <p></p>
+            <a href="/Home/Index" target="_blank">网站首页</a><a href="#" target="_blank">联系我们</a><a href="#" target="_blank">关于我们</a><br>
+            版权所有 违者必究 2010-2018
+            <br><br>
+        </footer>
+    </div>
+    <nav>
+        <ul id="not3footdh">
+            <li><a href="/Home/Index"><strong>返回首页</strong></a></li>
+            <li><a href="tel:@Model.Mobile"><strong>电话咨询</strong></a></li>
+            <li><a href="sms:@Model.Mobile"><strong>短信订购</strong></a></li>
+            <li><a href="#buy"><strong>在线下单</strong></a></li>
+        </ul>
+    </nav>
+</body>
+</html>
+<script src="~/Scripts/Index/jquery-1.11.0.min.js"></script>
+<script src="~/Scripts/Index/time.lesser.js"></script>
+<script src="~/Scripts/Index/layer.js"></script>
+<script src="~/Scripts/Index/notorder.js"></script>
+<script src="~/Scripts/Index/jquery.cityselect.js"></script>
+<script src="~/Scripts/distpicker.min.js"></script>
+<script src="~/Scripts/Index/jquery.SuperSlide.js"></script>
+<script type="text/javascript">
+    function onProcess() {
+        var mode = $('#RefProcessMode').val();
+        if (mode == '退货')
+            $('#putbank').show();
+        else {
+            $('#putbank').hide();
+        }
+    }
+    function not3change(id, pram) {
+        if (pram == 'tx') {
+            $('#qha').attr("class", "on");
+            $('#qhb').attr("class", "m");
+            $('#qhc').attr("class", "");
+
+            $('#not3order').show();
+            $('#not3check').hide();
+            $('#not3tui').hide();
+        } else if (pram == 'cx') {
+            $('#qha').attr("class", "");
+            $('#qhb').attr("class", "m on");
+            $('#qhc').attr("class", "");
+
+            $('#not3order').hide();
+            $('#not3check').show();
+            $('#not3tui').hide();
+        } else if (pram == 'th') {
+            $('#qha').attr("class", "");
+            $('#qhb').attr("class", "m");
+            $('#qhc').attr("class", "on");
+
+            $('#not3order').hide();
+            $('#not3check').hide();
+            $('#not3tui').show();
+        }
+    }
+    function minnumber() {
+        var qty = Number($('#Qty').val());
+        qty = qty - 1;
+        if (qty <= 1)
+            qty = 1;
+
+        $('#Qty').val(qty);
+        var amount = Number($("#hidprice").val());
+        amount = Math.ceil(qty * amount);
+
+        $("#Amount").val(amount);
+    }
+    function addnumber() {
+        var qty = Number($('#Qty').val());
+        qty = qty + 1;
+        if (qty <= 1)
+            qty = 1;
+
+        $('#Qty').val(qty);
+        var amount = Number($("#hidprice").val());
+        amount = Math.ceil(qty * amount);
+
+        $("#Amount").val(amount);
+    }
+    function inputnumber() {
+        var qty = Number($('#Qty').val());
+
+        $('#Qty').val(qty);
+        var amount = Number($("#hidprice").val());
+        $("#Amount").val(Math.ceil(qty * amount));
+    }
+    function Specjiage(spec, specId, price) {
+        $(spec).parent().attr('class', 'now');
+        $(spec).parent().siblings().attr('class', '');
+
+        var qty = Number($('#Qty').val());
+        var amount = Number(price);
+        $('#hidSpecId').val(specId);
+        $('#hidprice').val(amount);
+        $('#Amount').val(Math.ceil(qty * amount));
+    }
+    function SelectSubmit() {
+        var tel = $('#SelTel').val();
+        if (tel == '') {
+            alert('请输入要查询的手机号码！');
+            return;
+        }
+        $("#notcheckresult").html("");
+        $.ajax({
+            type: "post",
+            url: "/Order/GetLogistics",
+            data: {
+                moblie: tel
+            },
+            dataType: "json",
+            success: function (data) {
+                if (data.Code != 0) {
+                    alert(data.Message);
+                    return;
+                }
+                debugger
+                var html = '';
+                $.each(data.Result, function (i, val) {
+                    html += '<p>' + val.Date + '&nbsp;&nbsp;' + val.Message + '</p>'
+                });
+
+                $("#notcheckresult").append(html);
+            },
+            error: function (jqXHR) {
+                alert('服务器繁忙查询失败，请重试！');
+            }
+        });
+    }
+    function RefSubmit() {
+        var order = $('#RefOrder').val();
+        var mobile = $('#RefMobile').val();
+        var mode = $('#RefProcessMode').val();
+        var account = $('#RefAccount').val();
+        var message = $('#RefMessage').val();
+        if (order == '') {
+            alert('请输入待处理订单号！');
+            return;
+        }
+        if (mobile == '') {
+            alert('请输入提交订单时的手机号码！');
+            return;
+        }
+
+        $.ajax({
+            type: "post",
+            url: "/Order/InstallRefund",
+            data: {
+                OrderNo: order,
+                Mobile: mobile,
+                ProcessMode: mode,
+                Message: message,
+                Account: account
+            },
+            dataType: "json",
+            success: function (data) {
+                alert(data.Message);
+            },
+            error: function (jqXHR) {
+                alert('服务器繁忙登记失败，请重试！');
+            }
+        });
+    }
+    function timer(intDiff) {
+        window.setInterval(function () {
+            var day = 0,
+                hour = 0,
+                minute = 0,
+                second = 0;//时间默认值
+            if (intDiff > 0) {
+                day = Math.floor(intDiff / (60 * 60 * 24));
+                hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
+                minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
+                second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+            }
+            if (minute <= 9) minute = '0' + minute;
+            if (second <= 9) second = '0' + second;
+            $('#day_show').html(day);
+            $('#hour_show').html(hour);
+            $('#minute_show').html(minute);
+            $('#second_show').html(second);
+            intDiff--;
+        }, 1000);
+    }
+    function isPhoneNo(phone) {
+        var pattern = /^1[34578]\d{9}$/;
+        return pattern.test(phone);
+    }
+
+    var _hmt = _hmt || [];
+    $(function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?165aacd1a579c2da1219c27ca7e91904";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+
+        timer(parseInt($("#activity").val()));//倒计时总秒数量
+        $("#disSelect").distpicker();
+
+        $.ajax({
+            type: "post",
+            url: "/Mall/OrderInfo",
+            dataType: "json",
+            success: function (data) {
+                if (data.Code != 0) {
+                    alert(data.Message);
+                    return;
+                }
+                var litext = '';
+                $.each(data.Result, function (i, item) {
+                    litext += '<li style="height: 45px;"><span>[最新购买]：</span>' + item + '<font color="#FF0000">√</font></li>';
+                });
+                $('.orderms').append(litext);
+                $("#fahuo").slide({ mainCell: "ul", autoPlay: true, effect: "topMarquee", vis: 6, interTime: 50 });
+            },
+            error: function (jqXHR) {
+                alert('服务器繁忙下单失败，请重试！');
+            }
+        });
+
+        var isok = true;
+
+        $("#butsubmit").click(function () {
+            if (!isok)
+                return;
+
+            var productSpec = $("input[name='ProductSpecs']:checked").val();
+            var qty = $("#Qty").val();
+            var amount = $("#Amount").val();
+            var userName = $("#UserName").val();
+            var mobile = $("#Mobile").val();
+            var province = $("#Province").val();
+            var city = $("#City").val();
+            var area = $("#Area").val();
+            var address = $("#Address").val();
+            var leavMessage = $("#LeavMessage").val();
+
+            if (userName == '') {
+                alert("请输入收货人姓名！");
+                return;
+            }
+            if (mobile == '') {
+                alert('请输入收货人手机号码！');
+                return;
+            } else if (isPhoneNo(mobile) == false) {
+                alert('手机号码不正确！');
+                return;
+            }
+            if (province == '' || city == '' || area == '') {
+                alert('请选择完整的省市区！');
+                return;
+            }
+            if (address == '') {
+                alert('请输入详细地址！');
+                return;
+            }
+            isok = false;
+            $.ajax({
+                type: "post",
+                url: "/Order/Install",
+                data: {
+                    ProductId: $("#hidSpecId").val(),
+                    ProName: productSpec,
+                    Qty: qty,
+                    UserName: userName,
+                    Mobile: mobile,
+                    Address: province + ' ' + city + ' ' + area + ' ' + address,
+                    Amount: amount,
+                    LeavMessage: leavMessage
+                },
+                dataType: "json",
+                success: function (data) {
+
+                    if (data.Code != 0) {
+                        isok = true;
+                        alert(data.Message);
+                        return;
+                    }
+                    location.href = "/Mall/Success?orderNo=" + data.Result
+                },
+                error: function (jqXHR) {
+                    alert('服务器繁忙下单失败，请重试！');
+                }
+            });
+        });
+    });
+</script>

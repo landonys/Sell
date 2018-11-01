@@ -1,0 +1,208 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>添加产品</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="~/Areas/Sell/Content/hplus/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+    <link href="~/Areas/Sell/Content/hplus/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+    <link href="~/Areas/Sell/Content/hplus/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="~/Areas/Sell/Content/hplus/css/animate.min.css" rel="stylesheet">
+    <link href="~/Areas/Sell/Content/hplus/css/style.min862f.css?v=4.1.0" rel="stylesheet">
+</head>
+<body>
+    <div id="ProductAdd" class="row">
+        <div class="col-sm-12">
+            <div class="form-horizontal m-t">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">产品名称：</label>
+                    <div class="col-sm-8">
+                        <input id="Title" name="Title" class="form-control" type="text">
+                        <span class="help-block m-b-none"><i style="color:red;">*</i> 请输入产品名称</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">主页图片：</label>
+                    <div class="col-sm-8">
+                        <input id="PicSrc" name="PicSrc" class="form-control" type="text">
+                        <span class="help-block m-b-none"><i style="color:red;">*</i> 请输入主页图片路径</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">原价：</label>
+                    <div class="col-sm-8">
+                        <input id="Price" name="Price" class="form-control" onkeyup="onPrice()" type="number">
+                        <span class="help-block m-b-none"><i style="color:red;">*</i> 请输入原价</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">折扣：</label>
+                    <div class="col-sm-8">
+                        <input id="Discount" name="Discount" class="form-control" onkeyup="onPrice()" value="1" type="number">
+                        <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 请输入1-10数字</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">折扣价：</label>
+                    <div class="col-sm-8">
+                        <input id="DPrice" name="DPrice" class="form-control" type="number">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">活动结束时间：</label>
+                    <div class="col-sm-8">
+                        <input id="ActivityDate" name="ActivityDate" class="form-control layer-date" placeholder="YYYY-MM-DD hh:mm:ss" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">已销售：</label>
+                    <div class="col-sm-8">
+                        <input id="Sold" name="Sold" class="form-control" value="0" type="number">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">规格：</label>
+                    <div class="col-sm-8">
+                        <textarea name="ProductSpec" id="ProductSpec" rows="4" class="form-control"></textarea>
+                        <span class="help-block m-b-none"><i class="fa fa-info-circle"></i>多个款式请使用英文逗号分隔，例如【男款 [1598元],女款 [1598元]】</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">排序：</label>
+                    <div class="col-sm-8">
+                        <input id="Sort" name="Sort" class="form-control" value="1" type="number">
+                        <span class="help-block m-b-none"><i class="fa fa-info-circle"></i>数字越大越靠前</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">标题描述：</label>
+                    <div class="col-sm-8">
+                        <textarea name="Describe1" id="Describe1" class="form-control">【劳力士/Rolex官方首发秒杀活动】专柜正品，原价</textarea>
+                        <span class="help-block m-b-none"><i class="fa fa-info-circle"></i></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">活动价描述：</label>
+                    <div class="col-sm-8">
+                        <textarea name="Describe2" id="Describe2" class="form-control">元，年中活动价</textarea>
+                        <span class="help-block m-b-none"><i class="fa fa-info-circle"></i></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">结尾描述：</label>
+                    <div class="col-sm-8">
+                        <textarea name="Describe3" id="Describe3" rows="3" class="form-control">元！仅限今天，限量发售600只，原装正品，7天无理由退换，30天只换不修。时间不等人，赶快抢吧！</textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">横幅图片：</label>
+                    <div class="col-sm-8">
+                        <textarea name="BannerPic" id="BannerPic" rows="5" class="form-control"></textarea>
+                        <span class="help-block m-b-none"><i class="fa fa-info-circle"></i>多张图片请按顺序用英文逗号分隔，例如：2210127F6E3E54.jpg,22101203DE236C.jpg</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">描述图片：</label>
+                    <div class="col-sm-8">
+                        <textarea name="DescribePic" id="DescribePic" rows="5" class="form-control"></textarea>
+                        <span class="help-block m-b-none"><i class="fa fa-info-circle"></i>多张图片请按顺序用英文逗号分隔，例如：22102636D0FFBC.gif,221026E1FB2426.jpg</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">流程图片：</label>
+                    <div class="col-sm-8">
+                        <textarea name="ProcessPic" id="ProcessPic" rows="5" class="form-control">22103428381403.jpg</textarea>
+                        <span class="help-block m-b-none"><i class="fa fa-info-circle"></i>多张图片请按顺序用英文逗号分隔，例如：22103428381403.jpg</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">产品介绍图：</label>
+                    <div class="col-sm-8">
+                        <textarea name="SynopsisPic" id="SynopsisPic" rows="5" class="form-control"></textarea>
+                        <span class="help-block m-b-none"><i class="fa fa-info-circle"></i>多张图片请按顺序用英文逗号分隔</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-8">
+                        <label>
+                            <input id="IsShow" type="checkbox" class="i-checks" checked>上架
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-2">
+                        <input type="button" class="btn btn-primary" id="onsubmit" value="保存" />
+                        <input type="button" class="btn btn-white" id="onchongzhi" value="重置" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="~/Areas/Sell/Content/hplus/js/jquery.min.js?v=2.1.4"></script>
+<script src="~/Areas/Sell/Content/hplus/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="~/Areas/Sell/Content/hplus/js/content.min.js?v=1.0.0"></script>
+<script src="~/Areas/Sell/Content/hplus/js/plugins/iCheck/icheck.min.js"></script>
+<script src="~/Areas/Sell/Content/hplus/js/plugins/layer/laydate/laydate.js"></script>
+<script type="text/javascript">
+    $('#onsubmit').click(function () {
+        if ($("#Title").val() == '') {
+            alert('请输入产品名称！');
+            return;
+        }
+        if ($("#Price").val() == '') {
+            alert('请输入产品价格！');
+            return;
+        }
+        if ($("#PicSrc").val() == '') {
+            alert('请输入主图片名称！');
+            return;
+        }
+
+        $.ajax({
+            type: "post",
+            url: "/Product/Add",
+            data: {
+                Title: $("#Title").val(),
+                PicSrc: $("#PicSrc").val(),
+                Price: $("#Price").val(),
+                Discount: $("#Discount").val(),
+                DPrice: $("#DPrice").val(),
+                ActivityDate: $("#ActivityDate").val(),
+                ProductSpec: $("#ProductSpec").val(),
+                Sort: $('#Sort').val(),
+                Sold: $("#Sold").val(),
+                Describe1: $("#Describe1").val(),
+                Describe2: $("#Describe2").val(),
+                Describe3: $("#Describe3").val(),
+                BannerPic: $("#BannerPic").val(),
+                DescribePic: $("#DescribePic").val(),
+                ProcessPic: $("#ProcessPic").val(),
+                SynopsisPic: $("#SynopsisPic").val(),
+                IsShow: $("input[id='IsShow']").is(':checked')
+            },
+            dataType: "json",
+            success: function (data) {
+                alert(data.Message);
+                if (data.Code != 0)
+                    return;
+
+                location.href="/Sell/Product/Index"
+            },
+            error: function (jqXHR) {
+                alert('添加失败');
+            }
+        });
+    });
+    function onPrice() {
+        $("#DPrice").val(Number($("#Price").val()) * Number($("#Discount").val()) * 0.1);
+    }
+</script>

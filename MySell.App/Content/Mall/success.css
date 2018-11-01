@@ -1,0 +1,45 @@
+body{margin:0px; padding:0px; font-size:12px; font-family:"Î¢ÈíÑÅºÚ"; color:#000; background:#ebebeb;}
+a{color:#000; text-decoration:none; outline:none;}
+
+.okDiv{max-width:800px;width:100%;background-color:#ffffff; overflow:hidden; margin:40px auto;border:1px solid #9D9D9D;}
+#t0{line-height:150%; text-align:left; font-size:40px; color:#FFF;padding-left:150px;padding-top:15px;}
+#t1{line-height:150%; text-align:left; font-size:40px; color:#FFF;padding-left:150px;padding-top:15px;}
+#t2{text-align:left; color:#FFF; font-weight:400; font-size:18px; letter-spacing:2px;padding-left:150px;}
+
+@media screen and (min-width: 320px) and (max-width: 480px){
+.okDiv{margin:0px auto;}
+#t0{line-height:150%; text-align:left; font-size:200%; color:#FFF;padding-left:150px;padding-top:15px;}
+#t1{line-height:150%; text-align:left; font-size:200%; color:#FFF;padding-left:150px;padding-top:15px;}
+#t2{text-align:left; color:#FFF; font-weight:400; font-size:100%; letter-spacing:2px;padding-left:150px;}
+}
+
+.okDiv .top {
+	background-color:#0F9ED4; width:100%;
+	}
+.shibai{
+	background:url(shibai.png) left no-repeat;width:100%;height:150px;
+	}
+.chenggong{
+	background:url(chenggong.png) left no-repeat;width:100%;height:150px;
+	}
+.okDiv .content{
+	background-color:#ffffff;
+	overflow: hidden;
+	font-size: 15px;
+	line-height: 30px;
+	padding: 20px;
+}
+.okDiv .bottom {
+	background-color:#ffffff;  width:100%;
+	}
+.okDiv .btnDiv{text-align:center;}
+
+.okDiv .jiage {color:#f60;line-height: 25px;font-size:25px;text-align:center}
+.okDiv .zfts{font-size: 14px;font-family:''Î¢ÈíÑÅºÚ'';color:#090;width:80%;margin:0px auto;}
+
+.tuijian{text-align:center;margin-bottom:20px}
+.tuijian p{font-size:20px;margin-bottom:10px;margin-right:10px;color:red;}
+.tuijian img{width:40%}
+@media screen and (min-width: 320px) and (max-width: 480px){
+.tuijian img{width:80%}
+}

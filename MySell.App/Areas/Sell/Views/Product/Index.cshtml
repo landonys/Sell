@@ -1,0 +1,71 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>产品管理</title>
+    <link rel="shortcut icon" href="~/Areas/Sell/Content/hplus/favicon.ico">
+    <link href="~/Areas/Sell/Content/hplus/css/bootstrap.min14ed.css" rel="stylesheet" />
+    <link href="~/Areas/Sell/Content/hplus/css/font-awesome.min93e3.css" rel="stylesheet" />
+    <link href="~/Areas/Sell/Content/hplus/css/animate.min.css" rel="stylesheet" />
+    <link href="~/Areas/Sell/Content/hplus/css/style.min862f.css" rel="stylesheet" />
+    <link href="~/Areas/Sell/Content/vue-easytable.css" rel="stylesheet" />
+    <style>
+        .v-table-title-class {
+            background-color: #0099cc;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper wrapper-content animated fadeInUp">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>产品管理</h5>
+                    </div>
+                    <div class="ibox-content" id="app-product-table">
+                        <div class="row m-b-sm m-t-sm">
+                            <div class="col-md-11">
+                                <div class="input-group">
+                                    <input type="text" placeholder="请输入标题" v-model="name" class="input-sm form-control"> <span class="input-group-btn">
+                                        <button type="button" @@click="request"  class="btn btn-sm btn-primary"> 搜索</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <v-table is-horizontal-resize
+                                     :min-width="100"
+                                     style="width:100%"
+                                     :height="800"
+                                     :vertical-resize-offset='100'
+                                     :loading-content="loadingContent"
+                                     :error-content="errorContent"
+                                     :is-loading="isLoading"
+                                     :columns="columns"
+                                     :table-data="tableData"
+                                     :paging-index="(pageIndex-1)*pageSize"></v-table>
+                            <div class="mt20 mb20 bold" style="margin-top:10px;"></div>
+                            <v-pagination @@page-change="pageChange"
+                                          @@page-size-change="pageSizeChange"
+                                          :total="totalCount"
+                                          :page-size="pageSize"
+                                          :layout="['total', 'prev', 'pager', 'next', 'sizer', 'jumper']"></v-pagination>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="~/Areas/Sell/Content/hplus/js/jquery.min.js"></script>
+<script src="~/Areas/Sell/Scripts/vue.js"></script>
+<script src="~/Areas/Sell/Scripts/vue-easytable.js"></script>
+<script src="~/Areas/Sell/Scripts/MyScript/ProIndex.js"></script>

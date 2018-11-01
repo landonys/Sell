@@ -1,0 +1,75 @@
+﻿@using MySell.Dal.Model;
+@model ProOrder
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <title>您的订单已经提交成功，感谢你的支持！</title>
+    <meta name="Author" content="#" />
+    <meta name="Copyright" content="zzfhw.taobao.com,yun.not3.com,All Rights Reserved" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
+    <link href="~/Content/Mall/success.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="okDiv">
+        <div class="top">
+            <div class="chenggong">
+                <table style="text-align:left;">
+                    <tr>
+                        <td><img src="~/Content/success.png" style="height:auto;width:auto;" /></td>
+                        <td valign="top">
+                            <p style="color:#fff; font-size:x-large;">恭喜<span style="color:#FF8000;">@Model.UserName</span>，提交成功</p>
+                            <p style="color:#fff;">
+                                我们将马上安排发货，很快将可以送到你的手上。祝您生活愉快！
+                            </p>
+                            @*<div id="t1" style="text-align:left;"></div>
+                                <div id="t2" style="text-align:left;"></div>*@
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
+        </div>
+        <!-- 返回订单信息 -->
+        <div id="zfxx"></div>
+        <div class="content">
+
+            订单号：no.@Model.OrderNo<br />
+            姓名：@Model.UserName<br />
+            电话：@Model.Mobile<br />
+            产品：@Model.ProName<br />
+
+            付款方式：
+            <img src="~/Content/hdfk.png" border="0" />
+            <br />
+            地址：@Model.Address<br />
+        </div>
+        <div class="bottom">
+            <!-- 返回支付方式 -->
+
+            <div class="btnDiv">
+                <a href="/Home/Index"><img src="~/Content/btn5.gif" alt="" border="0" /></a>
+            </div>
+            <script>document.title = "您的订单已经提交成功，感谢你的支持！";</script>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?165aacd1a579c2da1219c27ca7e91904";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
