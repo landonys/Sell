@@ -113,3 +113,8 @@ D:\mysrc\MySell\MySell\MySell.App\obj\Release\MySell.App.csproj.CoreCompileInput
 D:\mysrc\MySell\MySell\MySell.App\obj\Release\MySell.App.csproj.CopyComplete
 D:\mysrc\MySell\MySell\MySell.App\obj\Release\MySell.App.dll
 D:\mysrc\MySell\MySell\MySell.App\obj\Release\MySell.App.pdb
+E:\mysrc\MySell\MySell.App\bin\Ioc.Modules.dll
+E:\mysrc\MySell\MySell.App\bin\Ioc.Modules.Ninject.dll
+E:\mysrc\MySell\MySell.App\bin\Ninject.dll
+E:\mysrc\MySell\MySell.App\bin\UrlRewrite.dll
+E:\mysrc\MySell\MySell.App\bin\Ninject.xml

@@ -1,4 +1,5 @@
-﻿using MySell.Dal.Model;
+﻿using MySell.Dal;
+using MySell.Dal.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,5 +36,11 @@ namespace MySell.Service.Products
         /// <param name="productId"></param>
         /// <returns></returns>
         List<ProductSpec> GetProductSpec(int productId);
+        /// <summary>
+        /// 获取产品信息
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        List<Product> Search(Paged page);
     }
 }

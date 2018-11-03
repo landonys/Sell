@@ -38,13 +38,16 @@ namespace MySell.Dal.Repository
             return DapperService.MySqlConnection().Execute(sql, product);
         }
 
-        public List<Product> GetProductAll(string name, Paged page)
+        public List<Product> GetProductPage(string name, bool show, Paged page)
         {
             int start = page.PageSize * (page.PageIndex - 1);
             var sql = new StringBuilder("SELECT * FROM Product WHERE 1=1 ");
             var title = string.Format("AND `Title` LIKE '%{0}%' ", name);
             if (!string.IsNullOrWhiteSpace(name))
                 sql.Append(title);
+
+            if (show)
+                sql.Append("AND `IsShow`=1 ");
 
             sql.Append("ORDER BY `Sort` desc,`Id` desc limit @StartIndex, @PageSize;");
 

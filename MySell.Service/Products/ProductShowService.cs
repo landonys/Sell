@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MySell.Dal;
 using MySell.Dal.Model;
 using MySell.Dal.Repository;
 
@@ -35,6 +36,13 @@ namespace MySell.Service.Products
         public List<ProductSpec> GetProductSpec(int productId)
         {
             return productSpecRepository.GetByProductId(productId);
+        }
+
+        public List<Product> Search(Paged page)
+        {
+            var productList = productRepository.GetProductPage(null, true, page);
+
+            return productList;
         }
     }
 }

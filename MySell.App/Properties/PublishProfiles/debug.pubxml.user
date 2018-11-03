@@ -1215,6 +1215,12 @@
     <File Include="bin/EntityFramework.dll">
       <publishTime>10/17/2018 11:16:18</publishTime>
     </File>
+    <File Include="bin/Ioc.Modules.dll">
+      <publishTime>10/19/2017 12:56:10</publishTime>
+    </File>
+    <File Include="bin/Ioc.Modules.Ninject.dll">
+      <publishTime>07/20/2016 18:04:34</publishTime>
+    </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>10/17/2018 11:16:24</publishTime>
     </File>
@@ -1222,31 +1228,34 @@
       <publishTime>10/17/2018 11:16:26</publishTime>
     </File>
     <File Include="bin/MySell.App.dll">
-      <publishTime>11/01/2018 10:53:04</publishTime>
+      <publishTime>11/03/2018 14:06:02</publishTime>
     </File>
     <File Include="bin/MySell.App.pdb">
-      <publishTime>11/01/2018 10:53:04</publishTime>
+      <publishTime>11/03/2018 14:06:02</publishTime>
     </File>
     <File Include="bin/MySell.Dal.dll">
-      <publishTime>10/29/2018 10:09:27</publishTime>
+      <publishTime>11/03/2018 14:06:01</publishTime>
     </File>
     <File Include="bin/MySell.Dal.dll.config">
       <publishTime>10/17/2018 13:52:47</publishTime>
     </File>
     <File Include="bin/MySell.Dal.pdb">
-      <publishTime>10/29/2018 10:09:27</publishTime>
+      <publishTime>11/03/2018 14:06:01</publishTime>
     </File>
     <File Include="bin/MySell.Service.dll">
-      <publishTime>10/29/2018 21:22:02</publishTime>
+      <publishTime>11/03/2018 14:06:01</publishTime>
     </File>
     <File Include="bin/MySell.Service.pdb">
-      <publishTime>10/29/2018 21:22:02</publishTime>
+      <publishTime>11/03/2018 14:06:01</publishTime>
     </File>
     <File Include="bin/MySql.Data.dll">
       <publishTime>04/26/2018 23:48:14</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>10/17/2018 11:16:25</publishTime>
+    </File>
+    <File Include="bin/Ninject.dll">
+      <publishTime>04/02/2014 18:40:18</publishTime>
     </File>
     <File Include="bin/System.Net.Http.dll">
       <publishTime>07/09/2013 11:04:48</publishTime>
@@ -1283,6 +1292,9 @@
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
       <publishTime>10/17/2018 11:16:25</publishTime>
+    </File>
+    <File Include="bin/UrlRewrite.dll">
+      <publishTime>02/15/2018 18:11:24</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>10/17/2018 11:16:33</publishTime>
@@ -1738,7 +1750,7 @@
       <publishTime>10/22/2018 19:58:04</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>10/17/2018 11:19:20</publishTime>
+      <publishTime>11/01/2018 15:33:36</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>10/17/2018 15:28:41</publishTime>
@@ -1843,7 +1855,7 @@
       <publishTime>10/17/2018 11:19:17</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>10/29/2018 21:20:07</publishTime>
+      <publishTime>11/03/2018 13:48:43</publishTime>
     </File>
     <File Include="Views/Mall/Index.cshtml">
       <publishTime>10/29/2018 21:21:00</publishTime>
@@ -1864,7 +1876,7 @@
       <publishTime>10/17/2018 11:26:04</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/01/2018 10:53:06</publishTime>
+      <publishTime>11/03/2018 10:47:26</publishTime>
     </File>
   </ItemGroup>
 </Project>

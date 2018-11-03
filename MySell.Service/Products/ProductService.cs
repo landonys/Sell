@@ -69,7 +69,7 @@ namespace MySell.Service.Products
 
         public List<Product> Search(string name, Paged page)
         {
-            var productList = productRepository.GetProductAll(name, page);
+            var productList = productRepository.GetProductPage(name, false, page);
 
             return productList;
         }
